@@ -101,9 +101,7 @@ function kafkaAppender(config, layout) {
 
 function stdoutAppender(config, layout) {
   // This is the appender function itself
-  return (loggingEvent) => {
-    process.stdout.write(`${layout(loggingEvent, config.timezoneOffset)}\n`);
-  };
+  return (loggingEvent) => process.stdout.write(`${layout(loggingEvent, config.timezoneOffset)}\n`);
 }
 
 const map = new Map();
